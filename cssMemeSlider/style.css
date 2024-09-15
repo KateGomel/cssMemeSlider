@@ -199,3 +199,30 @@ input {
   transform: translateX(-300%);
 }
 /* ----- */
+
+@media screen and (max-width: 900px) {
+  .optional {
+    flex-direction: column;
+    padding: 2em 2em 2em 2em;
+  }
+
+  .text {
+    width: 100%;
+  }
+
+  .labels-list {
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 0.5em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    padding: 2em 2em 0 2em;
+  }
+  .text__content {
+    font-size: 1.25em;
+    font-weight: 500;
+  }
+}
