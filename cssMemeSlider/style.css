@@ -166,3 +166,36 @@ input {
   font-weight: 700;
   color: aliceblue;
 }
+
+/* imgs */
+
+#radio1:checked ~ .container > .imgs__wrapper > .imgs__list {
+  transform: translateX(0);
+}
+
+#radio2:checked ~ .container > .imgs__wrapper > .imgs__list {
+  transform: translateX(-100%);
+}
+
+#radio3:checked ~ .container > .imgs__wrapper > .imgs__list {
+  transform: translateX(-200%);
+}
+
+#radio4:checked ~ .container > .imgs__wrapper > .imgs__list {
+  transform: translateX(-300%);
+}
+
+/* texts */
+#radio1:checked ~ .container > .optional > .text > .text__wrapper {
+  transform: translateX(0);
+}
+#radio2:checked ~ .container > .optional > .text > .text__wrapper {
+  transform: translateX(-100%);
+}
+#radio3:checked ~ .container > .optional > .text > .text__wrapper {
+  transform: translateX(-200%);
+}
+#radio4:checked ~ .container > .optional > .text > .text__wrapper {
+  transform: translateX(-300%);
+}
+/* ----- */
