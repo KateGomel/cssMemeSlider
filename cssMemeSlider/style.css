@@ -30,6 +30,8 @@ input {
   display: none;
 }
 
+/* slider */
+
 .slider {
   width: 100%;
   height: 100%;
@@ -44,4 +46,44 @@ input {
   padding: 4em 4em 0 4em;
   border-radius: 1.5em;
   margin: 2em;
+}
+
+.imgs__wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.imgs__list {
+  display: flex;
+  width: 100%;
+  transition: all 0.8s ease;
+}
+
+.imgs__list-item {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.imgs__item {
+}
+
+.optional {
+}
+
+.labels-list {
+}
+
+.labels__list-item {
+}
+
+.labels__item {
+}
+
+.text {
+}
+
+.text__wrapper {
+}
+
+.text__content {
 }
