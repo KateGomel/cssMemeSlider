@@ -65,25 +65,104 @@ input {
 }
 
 .imgs__item {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3%;
 }
 
 .optional {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 3em 1.5em 2em 2em;
 }
 
 .labels-list {
+  display: flex;
+  justify-content: end;
+  width: 30%;
 }
 
 .labels__list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: 2em;
+  padding: 0.5em;
 }
 
 .labels__item {
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: navy;
+}
+
+@media (hover: hover) {
+  .labels__list-item:hover .labels__item {
+    background: aliceblue;
+  }
+
+  .labels__list-item:active .labels__item {
+    background: transparent;
+    border: 0.2em solid aliceblue;
+  }
+}
+
+@media (hover: none) {
+  .labels__list-item:active .labels__item {
+    background: transparent;
+    border: 0.2em solid aliceblue;
+  }
+}
+
+#radio1:checked
+  ~ .container
+  > .optional
+  > .labels-list
+  > #label1
+  > .labels__item,
+#radio2:checked
+  ~ .container
+  > .optional
+  > .labels-list
+  > #label2
+  > .labels__item,
+#radio3:checked
+  ~ .container
+  > .optional
+  > .labels-list
+  > #label3
+  > .labels__item,
+#radio4:checked
+  ~ .container
+  > .optional
+  > .labels-list
+  > #label4
+  > .labels__item {
+  background: transparent;
+  border: 0.2em solid navy;
 }
 
 .text {
+  width: 70%;
+  overflow: hidden;
 }
 
 .text__wrapper {
+  display: flex;
+  transition: all 0.6s ease;
 }
 
 .text__content {
+  flex-shrink: 0;
+  display: block;
+  padding-left: 0.1em;
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: aliceblue;
 }
