@@ -1,0 +1,285 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+p,
+div,
+ul,
+li {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* ................ */
+body {
+  background-color: goldenrod;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  display: none;
+}
+
+/* slider */
+
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: black;
+  max-width: 60em;
+  padding: 4em 4em 0 4em;
+  border-radius: 1.5em;
+  margin: 2em;
+}
+
+.imgs__wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.imgs__list {
+  display: flex;
+  width: 100%;
+  transition: all 0.8s ease;
+}
+
+.imgs__list-item {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.imgs__item {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3%;
+}
+
+.optional {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 3em 1.5em 2em 2em;
+}
+
+.labels-list {
+  display: flex;
+  justify-content: end;
+  width: 30%;
+}
+
+.labels__list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: 2em;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.labels__item {
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: navy;
+}
+
+#radio1:checked
+  ~ .container
+  > .optional
+  > .labels-list
+  > #label1
+  > .labels__item,
+#radio2:checked
+  ~ .container
+  > .optional
+  > .labels-list
+  > #label2
+  > .labels__item,
+#radio3:checked
+  ~ .container
+  > .optional
+  > .labels-list
+  > #label3
+  > .labels__item,
+#radio4:checked
+  ~ .container
+  > .optional
+  > .labels-list
+  > #label4
+  > .labels__item {
+  background: transparent;
+  border: 0.2em solid navy;
+}
+
+@media (hover: hover) {
+  .labels__list-item:hover .labels__item {
+    background: aliceblue;
+  }
+
+  #radio1:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label1:hover
+    .labels__item,
+  #radio2:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label2:hover
+    .labels__item,
+  #radio3:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label3:hover
+    .labels__item,
+  #radio4:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label4:hover
+    .labels__item {
+    background: transparent;
+    border: 0.2em solid aliceblue;
+  }
+
+  .labels__list-item:active .labels__item {
+    background: transparent;
+    border: 0.2em solid aliceblue;
+  }
+
+  #radio1:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label1:active
+    .labels__item,
+  #radio2:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label2:active
+    .labels__item,
+  #radio3:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label3:active
+    .labels__item,
+  #radio4:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label4:active
+    .labels__item {
+    background: transparent;
+    border: 0.2em solid aliceblue;
+  }
+}
+
+@media (hover: none) {
+  .labels__list-item:active .labels__item {
+    background: transparent;
+    border: 0.2em solid aliceblue;
+  }
+}
+
+.text {
+  width: 70%;
+  overflow: hidden;
+}
+
+.text__wrapper {
+  display: flex;
+  transition: all 0.6s ease;
+}
+
+.text__content {
+  flex-shrink: 0;
+  display: block;
+  padding-left: 0.1em;
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: aliceblue;
+}
+
+/* imgs */
+
+#radio1:checked ~ .container > .imgs__wrapper > .imgs__list {
+  transform: translateX(0);
+}
+
+#radio2:checked ~ .container > .imgs__wrapper > .imgs__list {
+  transform: translateX(-100%);
+}
+
+#radio3:checked ~ .container > .imgs__wrapper > .imgs__list {
+  transform: translateX(-200%);
+}
+
+#radio4:checked ~ .container > .imgs__wrapper > .imgs__list {
+  transform: translateX(-300%);
+}
+
+/* texts */
+#radio1:checked ~ .container > .optional > .text > .text__wrapper {
+  transform: translateX(0);
+}
+#radio2:checked ~ .container > .optional > .text > .text__wrapper {
+  transform: translateX(-100%);
+}
+#radio3:checked ~ .container > .optional > .text > .text__wrapper {
+  transform: translateX(-200%);
+}
+#radio4:checked ~ .container > .optional > .text > .text__wrapper {
+  transform: translateX(-300%);
+}
+/* ----- */
+
+@media screen and (max-width: 900px) {
+  .optional {
+    flex-direction: column;
+    padding: 2em 2em 2em 2em;
+  }
+
+  .text {
+    width: 100%;
+  }
+
+  .labels-list {
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 0.5em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    padding: 2em 2em 0 2em;
+  }
+  .text__content {
+    font-size: 1.25em;
+    font-weight: 500;
+  }
+}
