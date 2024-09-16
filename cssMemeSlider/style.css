@@ -102,24 +102,6 @@ input {
   background: navy;
 }
 
-@media (hover: hover) {
-  .labels__list-item:hover .labels__item {
-    background: aliceblue;
-  }
-
-  .labels__list-item:active .labels__item {
-    background: transparent;
-    border: 0.2em solid aliceblue;
-  }
-}
-
-@media (hover: none) {
-  .labels__list-item:active .labels__item {
-    background: transparent;
-    border: 0.2em solid aliceblue;
-  }
-}
-
 #radio1:checked
   ~ .container
   > .optional
@@ -146,6 +128,80 @@ input {
   > .labels__item {
   background: transparent;
   border: 0.2em solid navy;
+}
+
+@media (hover: hover) {
+  .labels__list-item:hover .labels__item {
+    background: aliceblue;
+  }
+
+  #radio1:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label1:hover
+    .labels__item,
+  #radio2:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label2:hover
+    .labels__item,
+  #radio3:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label3:hover
+    .labels__item,
+  #radio4:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label4:hover
+    .labels__item {
+    background: transparent;
+    border: 0.2em solid aliceblue;
+  }
+
+  .labels__list-item:active .labels__item {
+    background: transparent;
+    border: 0.2em solid aliceblue;
+  }
+
+  #radio1:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label1:active
+    .labels__item,
+  #radio2:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label2:active
+    .labels__item,
+  #radio3:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label3:active
+    .labels__item,
+  #radio4:checked
+    ~ .container
+    > .optional
+    > .labels-list
+    > #label4:active
+    .labels__item {
+    background: transparent;
+    border: 0.2em solid aliceblue;
+  }
+}
+
+@media (hover: none) {
+  .labels__list-item:active .labels__item {
+    background: transparent;
+    border: 0.2em solid aliceblue;
+  }
 }
 
 .text {
